@@ -1,8 +1,8 @@
 package main
 
 import (
-	"net/http"
 	"log"
+	"net/http"
 	"runtime"
 
 	"code.google.com/p/go.net/websocket"
@@ -40,7 +40,7 @@ func main() {
 
 	go func() {
 		for {
-			cmd := <- commandChannel
+			cmd := <-commandChannel
 			for i := range socketChannels {
 				socketChannels[i] <- cmd
 			}
